@@ -36,17 +36,11 @@ extern char ultimem_unhide (void);
 #define ULTIMEM_UNHIDE_ID_ULTIMEM   0x11    /* 8MB Flash, 1MB RAM */
 #define ULTIMEM_UNHIDE_ID_VICMIDI   0x12    /* 512K Flash, 512K RAM */
 
-extern char     ultimem_is_installed (void);
-extern unsigned ultimem_get_size (void);
-
 extern void __fastcall__ ultimem_send_command (char);
 extern void __fastcall__ ultimem_burn_byte (unsigned short addr, char);
 extern void              ultimem_erase_chip (void);
 extern void __fastcall__ ultimem_erase_block (char);
 
 extern void __fastcall__ ultimem_copy_rom2ram (long src, long dst, unsigned size);
-
-// Map in memory bank a pointer is pointing to in another block config.
-extern void * __fastcall__ ultimem_map_ptr (void * destbase, unsigned short * destreg, void * ptr, unsigned short * blockregs);
 
 #endif /* #define ULTIMEM_H */
