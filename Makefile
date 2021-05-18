@@ -9,7 +9,8 @@ SOURCES_asm= \
     copy.asm \
     erase.asm \
     readwrite.asm \
-    unhide.asm
+    unhide.asm \
+    zeropage.asm
 
 LIBRARY=libultimem.a
 

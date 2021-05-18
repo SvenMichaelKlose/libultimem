@@ -4,7 +4,7 @@
 
 .import ultimem_offset2bank
 
-.importzp s, d, c, base, size, ptr
+.importzp s, d, c
 
 sreg = $9ff8
 dreg = $9ffa
@@ -12,6 +12,9 @@ sregidx = sreg - $9ff0
 dregidx = dreg - $9ff0
 sofs = $2000
 dofs = $4000
+
+.zeropage
+base:   .res 4
 
 .code
 
@@ -66,8 +69,8 @@ dofs = $4000
 
     ; Make the Z flag the C flag for the countdown,
     ; so we don't have to compare explicitly.
-    inc size
-    inc size+1
+    inc c
+    inc c+1
 
 l3: ldy #0
     lda (base),y
@@ -78,9 +81,9 @@ l3: ldy #0
 l4: inc d
     beq inc_d
 
-l5: dec size
+l5: dec c
     bne l3
-    dec size+1
+    dec c+1
     bne l3
 
     ; Restore block config.
