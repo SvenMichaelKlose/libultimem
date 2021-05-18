@@ -1,4 +1,5 @@
 DESTDIR?=/usr/local/lib/cc65/
+INCLUDES?=/usr/local/include/cc65/
 
 SOURCES_asm= \
     burn.asm \
@@ -31,3 +32,5 @@ clean:
 install:
 	mkdir -p $(DESTDIR)
 	cp libultimem.a $(DESTDIR)/
+	mkdir -p $(INCLUDES)
+	cp ultimem.h $(INCLUDES)/
