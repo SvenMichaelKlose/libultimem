@@ -36,6 +36,7 @@ extern char ultimem_unhide (void);
 #define ULTIMEM_UNHIDE_ID_ULTIMEM   0x11    /* 8MB Flash, 1MB RAM */
 #define ULTIMEM_UNHIDE_ID_VICMIDI   0x12    /* 512K Flash, 512K RAM */
 
+/* Send command to Flash ROM chip. See https://www.cypress.com/documentation/datasheets/s29gl064n-s29gl032n-64-mbit-32-mbit-3-v-page-mode-mirrorbit-flash */
 extern void __fastcall__ ultimem_send_command (char);
 extern void __fastcall__ ultimem_burn_byte (unsigned short addr, char);
 extern void              ultimem_erase_chip (void);
